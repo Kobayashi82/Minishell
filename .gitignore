@@ -1,0 +1,8 @@
+*
+!Makefile
+!src
+!src/**
+!include
+!include/**
+!.gitignore
+.DS_Store
