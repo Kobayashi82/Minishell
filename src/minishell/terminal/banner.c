@@ -30,7 +30,7 @@ void	print_banner(t_data *d)
 	print(d, 1, BR"\t|                                    ", J);
 	print(d, 1, "                    "Y"|\n", J);
 	print(d, 1, BR"\t|  "C"As beautiful as a shell   ", J);
-	print(d, 1, Y" alvaquer"C"   &"BR"   vzurera-    "Y"|\n"NC, J);
+	print(d, 1, Y"         "C"    "Y"   vzurera-    "Y"|\n"NC, J);
 	print(d, 1, BR"\t———————————————", J);
 	print(d, 1, "———————————"Y, J);
 	print(d, 1, "———————————————————", J);
@@ -40,11 +40,13 @@ void	print_banner(t_data *d)
 
 void	print_welcome(t_data *d)
 {
-	print(d, 1, "\n\t\t\tWELCOME TO MINISHELL 1,0\n\n", R);
-	print(d, 1, "\t This project has been made with effort and care\n", J);
-	print(d, 1, "\t Feel free to try anything you want\n", J);
-	print(d, 1, "\t To get information about the builtins you can type", J);
-	print(d, 1, " 'help'\n\n    Check the minishell documentation for", J);
+	print(d, 1, G"\n\t\t\tWELCOME TO "Y"MINI"BR"SHELL"G" 1.0\n\n", R);
+	print(d, 1, C"\t This "BR"project"C" has been made with ", J);
+    print(d, 1, G"effort"C" and "G"care\n", J);
+	print(d, 1, C"\t Feel "G"free"C" to try anything you want\n", J);
+	print(d, 1, "\t To get information about the "BR"builtins", J);
+	print(d, 1, C" you can type "Y"help\n\n", J);
+    print(d, 1, C"\t Check the "G"documentation"C" for", J);
 	print(d, 1, " a complete list of features\n\n", P);
 }
 
