@@ -4,7 +4,7 @@ Minishell es un proyecto de la escuela 42 que implementa las funcionalidades bá
 
 ## ✨ Características
 
-### 🔧 Funcionalidades Básicas del Shell
+### 🔧 Funcionalidades Básicas
 - **Línea de Comandos Interactiva**: Prompt limpio con historial de comandos
 - **Ejecución de Comandos**: Resolución de PATH, ejecución con rutas absolutas/relativas
 - **Gestión de Procesos**: Modelo fork/exec con manejo adecuado de señales
@@ -14,7 +14,7 @@ Minishell es un proyecto de la escuela 42 que implementa las funcionalidades bá
 - **Heredoc**: Mecanismos avanzados de redirección de entrada
 - **Verificación de Sintaxis**: Detección y reporte de errores sintácticos
 
-### 🚀 Características Avanzadas (Más allá de los requisitos)
+### 🚀 Características Avanzadas
 
 #### **Análisis Sintáctico Mejorado**
 - **Expansión de Comandos**: `$()` para sustitución de comandos
