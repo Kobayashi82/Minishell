@@ -62,12 +62,6 @@ Todos los built-ins incluyen `--help` y `--version`:
 git clone git@github.com:Kobayashi82/Minishell.git
 cd minishell
 make
-
-# Ejecutar en modo interactivo
-./minishell
-
-# Ejecutar comandos directamente
-./minishell -c "echo 'Hola Mundo'"
 ```
 
 ## 🖥️ Uso
