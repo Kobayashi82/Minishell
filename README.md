@@ -12,6 +12,7 @@ Minishell es un proyecto de la escuela 42 que implementa las funcionalidades bá
 - **Redirección I/O**: Redirección de entrada/salida con modo append
 - **Pipes**: Encadenamiento de comandos con operadores de tubería
 - **Heredoc**: Mecanismos avanzados de redirección de entrada
+- **Verificación de Sintaxis**: Detección y reporte de errores sintácticos
 
 ### 🚀 Características Avanzadas (Más allá de los requisitos)
 
@@ -23,7 +24,6 @@ Minishell es un proyecto de la escuela 42 que implementa las funcionalidades bá
 - **Manejo de Comillas**: Procesamiento avanzado de comillas simples y dobles
 - **Escape de Caracteres**: Soporte para `\` (barra invertida)
 - **Tokens No Cerrados**: Muestra PS2 para continuación de línea
-- **Verificación de Sintaxis**: Detección y reporte de errores sintácticos
 
 #### **Variables y Expansión**
 - **Variables de Shell**: Variables locales además de las de entorno
