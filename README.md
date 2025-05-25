@@ -1,12 +1,11 @@
 # Minishell
 
-Minishell es un proyecto de implementación de shell de la escuela 42, que recrea la funcionalidad principal de Bash. Esta implementación va un poco más allá de los requisitos obligatorios del proyecto.
+Minishell es un proyecto de la escuela 42 que implementa las funcionalidades básicas de un shell tipo Bash. Esta versión incluye todos los requisitos obligatorios del proyecto, los del bonus y algunas características adicionales.
 
 ## ✨ Características
 
 ### 🔧 Funcionalidades Básicas del Shell
 - **Línea de Comandos Interactiva**: Prompt limpio con historial de comandos
-- **Modo No-Interactivo**: Opción `-c` para ejecutar comandos directamente
 - **Ejecución de Comandos**: Resolución de PATH, ejecución con rutas absolutas/relativas
 - **Gestión de Procesos**: Modelo fork/exec con manejo adecuado de señales
 - **Variables de Entorno**: Soporte completo para expansión y manipulación de variables
@@ -18,6 +17,7 @@ Minishell es un proyecto de implementación de shell de la escuela 42, que recre
 
 #### **Análisis Sintáctico Mejorado**
 - **Expansión de Comandos**: `$()` para sustitución de comandos
+- **Modo No-Interactivo**: Opción `-c` para ejecutar comandos directamente
 - **Herestring**: `<<<` para entrada de cadena directa
 - **Expansión en Heredoc**: Variables y comandos dentro de heredoc y herestring
 - **Manejo de Comillas**: Procesamiento avanzado de comillas simples y dobles
