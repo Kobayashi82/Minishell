@@ -1,6 +1,18 @@
+<div align="center">
+
+![System & Kernel](https://img.shields.io/badge/System-brown?style=for-the-badge)
+![Shell](https://img.shields.io/badge/Shell-Bash-blue?style=for-the-badge)
+![Protocol Command](https://img.shields.io/badge/Protocol-Shell-green?style=for-the-badge)
+![C Language](https://img.shields.io/badge/Language-C-red?style=for-the-badge)
+
+*Una implementación básica de un shell al estilo Bash.*
+
+</div>
+
 # Minishell
 
-Minishell es un proyecto de la escuela 42 que implementa las funcionalidades básicas de un shell tipo Bash. Esta versión incluye todos los requisitos obligatorios del proyecto, los del bonus y algunas características adicionales.
+Minishell es un proyecto de ```42 School``` que implementa las funcionalidades básicas de un shell tipo ```Bash```.  
+Esta versión incluye todos los requisitos ```obligatorios``` del proyecto, los del ```bonus``` y algunas características ```adicionales```.
 
 ## ✨ Características
 
@@ -160,3 +172,16 @@ minishell$ bc <<< "2+2"
 - ✅ **Manejo de errores**: Detección y reporte detallado de errores
 - ✅ **Tokenización avanzada**: Soporte para tokens complejos
 
+## 📄 Licencia
+
+Este proyecto está licenciado bajo la WTFPL – [Do What the Fuck You Want to Public License](http://www.wtfpl.net/about/).
+
+---
+
+<div align="center">
+
+**🌐 Desarrollado como parte del curriculum de 42 School 🌐**
+
+*"In Minishell, the last feature is never really the last"*
+
+</div>

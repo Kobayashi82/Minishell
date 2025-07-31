@@ -1,11 +1,18 @@
 *
-!Makefile
-!src
-!src/**
-!inc
-!inc/**
+!.vscode
+!.vscode/**
+.vscode/launch.json
+.vscode/settings.json
 !doc
 !doc/**
-!.gitignore
+doc/minishell\ 8.3.pdf
+!inc
+!inc/**
+!src
+!src/**
 !.readline.supp
 !leaks
+!Makefile
+!.gitignore
+!README.md
+!LICENSE
