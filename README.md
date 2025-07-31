@@ -5,7 +5,7 @@
 ![Protocol Command](https://img.shields.io/badge/Protocol-Shell-green?style=for-the-badge)
 ![C Language](https://img.shields.io/badge/Language-C-red?style=for-the-badge)
 
-*Una implementación básica de un shell al estilo Bash.*
+*Una implementación básica de un shell al estilo Bash*
 
 </div>
 
