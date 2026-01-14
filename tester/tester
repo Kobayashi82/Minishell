@@ -13,11 +13,12 @@ else
 		"pipes"
 		"redirects"
 		"extras"
+		"syntax"
+		"os_specific"
+		"wildcards"
+		"bonus"
+		"bonus_bonus"
 	)
-fi
-
-if [[ $1 == "wildcards"  || $1 == "bonus" ]]; then
-	MINISHELL_PATH="../minishell_bonus"
 fi
 
 BOLD="\e[1m"
