@@ -6,7 +6,7 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:46:19 by vzurera-          #+#    #+#             */
-/*   Updated: 2024/05/08 14:21:19 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/01/14 23:09:32 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ static void	initialize_variables(t_data *data, char **envp, char *arg0)
 	if (!env_get(data->envp, "OLDPWD"))
 		shell_set(data, &data->vars, "OLDPWD", "[EXPORT_ONLY]");
 	if (!env_get(data->envp, "PATH"))
-		shell_set(data, &data->vars, "PATH", \
+		shell_set(data, &data->vars, "PATH",
 			"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin");
 	shell_path(data, arg0);
 	env_set(&data->envp, "_", env_get(data->envp, "SHELL"));

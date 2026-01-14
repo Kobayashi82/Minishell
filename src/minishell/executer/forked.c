@@ -6,7 +6,7 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 19:18:25 by vzurera-          #+#    #+#             */
-/*   Updated: 2024/05/11 01:44:47 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/01/14 22:59:35 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void	clone_exec(t_token *token)
 	exit(0);
 }
 
-//	Validate a command (exists, is a directory, permission...)
+//	Validate a command (exists, Is a directory, permission...)
 static int	valid_cmd(t_token *token, char *path)
 {
 	if (ft_memchr(token->cmd, '/', ft_strlen(token->cmd))

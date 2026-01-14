@@ -6,7 +6,7 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 14:13:30 by vzurera-          #+#    #+#             */
-/*   Updated: 2024/05/10 18:29:13 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/01/14 23:09:12 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,11 @@ void	print_welcome(t_data *d)
 {
 	print(d, 1, G"\n\t\t\tWELCOME TO "Y"MINI"BR"SHELL"G" 1.0\n\n", R);
 	print(d, 1, C"\t This "BR"project"C" has been made with ", J);
-    print(d, 1, G"effort"C" and "G"care\n", J);
+	print(d, 1, G"effort"C" and "G"care\n", J);
 	print(d, 1, C"\t Feel "G"free"C" to try anything you want\n", J);
 	print(d, 1, "\t To get information about the "BR"builtins", J);
 	print(d, 1, C" you can type "Y"help\n\n", J);
-    print(d, 1, C"\t Check the "G"documentation"C" for", J);
+	print(d, 1, C"\t Check the "G"documentation"C" for", J);
 	print(d, 1, " a complete list of features\n\n", P);
 }
 

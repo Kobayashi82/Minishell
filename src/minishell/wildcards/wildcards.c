@@ -6,13 +6,13 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:42:59 by vzurera-          #+#    #+#             */
-/*   Updated: 2024/05/08 13:01:35 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/01/14 22:59:35 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-//	Check if path is a directory
+//	Check if path Is a directory
 bool	is_directory(char *path)
 {
 	struct stat	statbuf;

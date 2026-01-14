@@ -6,7 +6,7 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 23:35:20 by vzurera-          #+#    #+#             */
-/*   Updated: 2024/05/07 22:49:55 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/01/14 23:03:53 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ static void	add_export_var(t_data *data, char ***envp, char *name)
 	n = 0;
 	while ((*envp)[n] != NULL)
 		n++;
-	n_envp = ft_realloc(*envp, (n + 1) * sizeof(char *), \
-		(n + 2) * sizeof(char *));
+	n_envp = ft_realloc(*envp, (n + 1) * sizeof(char *),
+			(n + 2) * sizeof(char *));
 	if (!n_envp)
 		exit_error(data, NO_MEMORY, 1001, NULL);
 	n_envp[n] = safe_strdup(data, name);

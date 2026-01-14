@@ -6,7 +6,7 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 20:53:33 by vzurera-          #+#    #+#             */
-/*   Updated: 2024/05/07 18:55:55 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/01/14 23:06:29 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	shell_set(t_data *data, t_var **vars, char *name, char *content)
 		current->content = ft_strdup(content);
 		current->ex = !(ft_strcmp(current->content, "[EXPORT_ONLY]"));
 		if (!current->name || !current->content)
-			return (free(current->name), free(current), \
+			return (free(current->name), free(current),
 				exit_error(data, NO_MEMORY, 1000, NULL), 1);
 		current->next = *vars;
 		if (*vars)
@@ -114,7 +114,7 @@ t_var	*shell_clone(t_data *data, t_var *vars)
 		clone->name = ft_strdup(vars->name);
 		clone->content = ft_strdup(vars->content);
 		if (!clone->name || !clone->content)
-			return (free(clone->name), free(clone), \
+			return (free(clone->name), free(clone),
 				exit_error(data, NO_MEMORY, 1000, NULL), NULL);
 		clone->prev = current;
 		if (current)

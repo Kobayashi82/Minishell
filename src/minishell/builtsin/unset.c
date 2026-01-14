@@ -6,7 +6,7 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 17:51:13 by vzurera-          #+#    #+#             */
-/*   Updated: 2024/05/11 01:26:15 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/01/15 00:02:24 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,6 @@ int	unset(t_data *data, char **args)
 	{
 		environment_unset(&data->envp, args[i]);
 		shell_unset(&data->vars, args[i]);
-		if (forbidden_chars(args[i], true))
-		{
-			status = 1;
-			print(data, 2, ft_strjoin("minishell: unset: `", args[i], 0), FR);
-			print(data, 2, "': not a valid identifier\n", P);
-		}
 	}
 	return (status);
 }

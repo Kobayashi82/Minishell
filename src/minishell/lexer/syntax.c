@@ -6,7 +6,7 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 13:02:02 by vzurera-          #+#    #+#             */
-/*   Updated: 2024/05/11 02:31:37 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/01/15 00:05:31 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static int	syntax_msg(t_token *token, int error, char *c)
 		get_token_type(token, &s);
 	print(token->data, 2, "minishell: ", R);
 	if (error == NL)
-		print(token->data, 2, \
+		print(token->data, 2,
 			"syntax error near unexpected token `newline'\n", P);
 	else if (error == TK || error == PTK)
 	{
@@ -95,6 +95,9 @@ static int	check_syntax_1(t_token *current, bool cmd)
 	if (current->type > 8 && !current->prev && current->next
 		&& current->next->type > DGT)
 		return (syntax_msg(current, TK, NULL));
+	else if (current->type == PIPE && !current->prev && current->next
+		&& current->next->type == SMAND)
+		return (syntax_msg(current, SCPAR, "|&"));
 	else if (current->type == PIPE && !current->prev && current->next
 		&& current->next->type > OR)
 		return (syntax_msg(current, SCPAR, "|"));

@@ -6,7 +6,7 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 19:59:09 by vzurera-          #+#    #+#             */
-/*   Updated: 2024/05/11 01:33:51 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/01/14 22:59:35 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static void	catastrophic_msg(t_data *data, int error, char *val)
 	if (error == START_DIR)
 	{
 		print(data, 2, ft_strjoin(val, ": ", 0), FJ);
-		print(data, 2, "is a directory\n", P);
+		print(data, 2, "Is a directory\n", P);
 	}
 	if (error == SHLVL_HIGH)
 	{
@@ -48,7 +48,7 @@ static void	redirection_msg(t_data *data, int error, char *val)
 	if (error == OPEN_READ)
 		print(data, 2, ft_strjoin(val, ": Permission denied\n", 0), FP);
 	if (error == OPEN_DIR)
-		print(data, 2, ft_strjoin(val, ": is a directory\n", 0), FP);
+		print(data, 2, ft_strjoin(val, ": Is a directory\n", 0), FP);
 	if (error == OPEN_FAIL)
 		print(data, 2, ft_strjoin(val, ": No such file or directory\n", 0), FP);
 	if (error == DUP_FAIL)
@@ -101,7 +101,7 @@ static void	execution_msg(t_data *data, int error, char *val)
 	if (error == CMD_LAST)
 		print(data, 2, "!!: event not found\n", P);
 	if (error == CMD_DIR)
-		print(data, 2, ft_strjoin(val, ": is a directory\n", 0), FP);
+		print(data, 2, ft_strjoin(val, ": Is a directory\n", 0), FP);
 	if (error == CMD_NO_FILE)
 		print(data, 2, ft_strjoin(val, ": command not found\n", 0), FP);
 	if (error == CMD_EXEC)

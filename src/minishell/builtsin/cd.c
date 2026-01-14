@@ -6,7 +6,7 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 21:13:25 by vzurera-          #+#    #+#             */
-/*   Updated: 2024/05/07 23:56:03 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/01/14 23:23:29 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ static int	is_dash(t_data *data, char **args)
 		if (!oldpwd || !*oldpwd)
 			return (free(tmp), exit_error(data, CD_OLDPWD, 1, NULL));
 		if (chdir(oldpwd))
-			return (free(tmp), exit_error(data, CD_ERROR, 1, \
-				env_get(data->envp, "OLDPWD")));
+			return (free(tmp), exit_error(data, CD_ERROR, 1,
+					env_get(data->envp, "OLDPWD")));
 		print(data, 1, ft_strjoin(oldpwd, "\n", 0), FRP);
 		env_set(&data->envp, "PWD", oldpwd);
 		env_set(&data->envp, "OLDPWD", tmp);
@@ -90,7 +90,7 @@ static int	change_dir(t_token *token, char *path)
 		else
 			return (exit_error(token->data, CD_PATH, 1, path));
 	}
-	env_set(&token->data->envp, "OLDPWD", \
+	env_set(&token->data->envp, "OLDPWD",
 		env_get(token->data->envp, "PWD"));
 	if (getcwd(cwd, sizeof(cwd)))
 		env_set(&token->data->envp, "PWD", cwd);
@@ -101,21 +101,25 @@ static int	change_dir(t_token *token, char *path)
 int	cd(t_token *token, char **args)
 {
 	char	*home;
+	int		i;
 
-	if (!args[1] || (!ft_strcmp(args[1], "--") && !args[2]))
+	i = 1;
+	if (!ft_strcmp(args[1], "--"))
+		i++;
+	if (args[i] && args[i + 1])
+		return (exit_error(token->data, CD_ARGS, 1, NULL));
+	if (!args[i])
 	{
 		home = env_get(token->data->envp, "HOME");
 		if (!home || !*home)
 			return (exit_error(token->data, CD_HOME, 1, NULL));
 		return (change_dir(token, home));
 	}
-	else if (!ft_strcmp(args[1], "--") && args[2] && !args[3])
-		return (change_dir(token, args[2]));
-	else if (!ft_strcmp(args[1], "--help"))
+	else if (!ft_strcmp(args[i], "--help"))
 		return (cd_message(token->data, 0));
-	else if (!ft_strcmp(args[1], "--version"))
+	else if (!ft_strcmp(args[i], "--version"))
 		return (cd_message(token->data, 1));
 	else if (is_dash(token->data, args))
 		return (0);
-	return (change_dir(token, args[1]));
+	return (change_dir(token, args[i]));
 }

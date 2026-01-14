@@ -6,7 +6,7 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 23:19:38 by vzurera-          #+#    #+#             */
-/*   Updated: 2024/05/06 11:18:44 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/01/14 23:07:15 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	merge_lists(t_list **cwd_list, t_list *arg_list)
 		if (!strcmp((char *)current->content, ".."))
 			ft_lstdel_last(cwd_list, free);
 		else if (ft_strcmp((char *)current->content, "."))
-			ft_lstadd_back(cwd_list, \
+			ft_lstadd_back(cwd_list,
 				ft_lstnew(strdup((char *)current->content)));
 		current = current->next;
 	}

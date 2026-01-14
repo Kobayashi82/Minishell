@@ -6,7 +6,7 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 18:19:36 by vzurera-          #+#    #+#             */
-/*   Updated: 2024/05/11 10:59:18 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/01/14 23:08:36 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ static void	set_var_env(t_data *data, char *name, char *content, char *rnme)
 		if (!env_get(data->envp, rnme))
 		{
 			shell_set(data, &data->vars, name, content);
-			env_set(&data->envp, name, \
+			env_set(&data->envp, name,
 				shell_get(data->vars, rnme, 1)->content);
 		}
 		else

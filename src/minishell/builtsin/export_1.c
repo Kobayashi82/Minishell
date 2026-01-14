@@ -6,7 +6,7 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 23:35:20 by vzurera-          #+#    #+#             */
-/*   Updated: 2024/05/07 23:11:09 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/01/14 23:04:47 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,8 @@ static int	export_set_unset(t_token *token, int status, int i, bool is_n)
 	{
 		if (!is_n && i <= 0)
 		{
-			if (validate_var(token->data, \
-				safe_strdup(token->data, curr->arg), true))
+			if (validate_var(token->data,
+					safe_strdup(token->data, curr->arg), true))
 				status = 1;
 		}
 		else if (i <= 0)

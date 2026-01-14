@@ -6,7 +6,7 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 22:32:22 by vzurera-          #+#    #+#             */
-/*   Updated: 2024/05/06 21:14:26 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/01/14 23:46:11 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,11 @@ void	set_prompt(t_data *data)
 	char	*str;
 	char	cwd[1024];
 
+	if (!isatty(STDIN_FILENO))
+	{
+		data->prompt = ft_strdup("Minishell$ ");
+		return ;
+	}
 	str = get_user(data);
 	str = ft_strjoin(str, "\001"C"\002]\001"G"\002-\001"Y"\002Mini", 1);
 	str = ft_strjoin(str, "\001"BR"\002Shell\001"NC"\002:\001"B_B"\002", 1);

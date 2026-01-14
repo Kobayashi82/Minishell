@@ -6,7 +6,7 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 19:16:19 by vzurera-          #+#    #+#             */
-/*   Updated: 2024/05/11 01:26:08 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/01/14 23:08:19 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,8 @@ int	validate_var(t_data *data, char *var, bool env)
 	if (pos && (pos - var) > 0)
 	{
 		name = validate_str(data, ft_substr(var, 0, (pos - var)), true);
-		content = validate_str(data, ft_substr(var, (pos - var) + 1, \
-			ft_strlen(pos + 1)), false);
+		content = validate_str(data, ft_substr(var, (pos - var) + 1,
+					ft_strlen(pos + 1)), false);
 	}
 	if (env)
 	{
@@ -99,8 +99,8 @@ int	validate_var(t_data *data, char *var, bool env)
 			name = validate_str(data, ft_strdup(var), true);
 		if (!name || !*name || (!pos && (!shell_get(data->vars, name, true)
 					|| shell_get(data->vars, name, true)->ex)))
-			return (free(content), variable_syntax(data, var, name, \
-				(!pos && !shell_get(data->vars, name, 1)) + (env * 2)));
+			return (free(content), variable_syntax(data, var, name,
+					(!pos && !shell_get(data->vars, name, 1)) + (env * 2)));
 	}
 	set_var(data, name, content, env);
 	return (free(var), free(name), free(content), 0);

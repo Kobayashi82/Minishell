@@ -6,7 +6,7 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 23:48:24 by vzurera-          #+#    #+#             */
-/*   Updated: 2024/04/30 16:19:04 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/01/14 23:03:40 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ static int	history_message(t_data *d, int type)
 {
 	if (type)
 	{
-		print(d, 1, ft_strjoin("history version ", \
-			(char *)rl_library_version, 0), FR);
+		print(d, 1, ft_strjoin("history version ",
+				(char *)rl_library_version, 0), FR);
 		print(d, 1, " (part of readline)\n\n", J);
 		print(d, 1, "This is free software: ", J);
 		print(d, 1, "you are free to change and redistribute it.\n", J);

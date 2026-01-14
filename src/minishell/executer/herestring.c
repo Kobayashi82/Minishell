@@ -6,7 +6,7 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 15:59:59 by vzurera-          #+#    #+#             */
-/*   Updated: 2024/05/03 19:55:14 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/01/14 23:10:02 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_replace(char *str, int *start, int len, char *replace)
 	}
 	ft_memcpy(new_str, str, i);
 	ft_memcpy(new_str + i, replace, ft_strlen(replace));
-	ft_memcpy(new_str + i + ft_strlen(replace), \
+	ft_memcpy(new_str + i + ft_strlen(replace),
 		str + i + len, ft_strlen(str + i + len));
 	new_str[new_len] = '\0';
 	i += ft_strlen(replace);

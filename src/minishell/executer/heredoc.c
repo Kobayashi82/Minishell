@@ -6,7 +6,7 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 17:20:40 by vzurera-          #+#    #+#             */
-/*   Updated: 2024/05/08 16:35:21 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/01/15 00:19:14 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,22 +53,22 @@ static char	*add_line(t_data *data, char *text, char *str_end, char *sep)
 			|| ft_strlen(str_end) != ft_strlen(line) - 1))
 	{
 		text = ft_strjoin(text, line, 3);
-		line = readline("> ");
+		if (isatty(STDIN_FILENO))
+			line = readline("> ");
 		if (!line)
 		{
 			if (g_signal != 130)
 				print(data, 1, sep, RP);
-			print(data, 2, "minishell: warning: here-document ", R);
-			print(data, 2, "delimited by end-of-file (wanted `", J);
+			print(data, 2, "minishell: warning: here-document at line", R);
+			print(data, 2, " 1 delimited by end-of-file (wanted `", J);
 			print(data, 2, ft_strjoin(str_end, "')\n", 0), FP);
 			return (data->hd_t = 0, text);
 		}
 		line = ft_strjoin(line, "\n", 1);
 	}
-	free(line);
 	if (g_signal != 130)
 		print(data, 1, sep, RP);
-	return (text);
+	return (free(line), text);
 }
 
 //	Expand and replace all variables in a string
@@ -106,11 +106,11 @@ static int	heredoc(int fd, t_token *token, char *sep)
 	char	*text;
 	char	*file;
 
-	if (!token->data->hd_t && g_signal != 130)
+	if (!token->data->hd_t && g_signal != 130 && isatty(STDIN_FILENO))
 		print(token->data, 1, sep, RP);
 	token->data->hd_t = 1;
 	delimiter(token, token->args_lst->arg, NULL, 0);
-	if (g_signal != 130)
+	if (g_signal != 130 && isatty(STDIN_FILENO))
 	{
 		print(token->data, 1, ft_strjoin("  Delimiter: ", token->cmd, 0), FR);
 		print(token->data, 1, ft_strjoin("\n", sep, 0), FP);
@@ -147,8 +147,10 @@ void	heredocs(t_data *data)
 			old_history = copy_history();
 			clear_history();
 			trim_arg(current, current->cmd);
-			heredoc(0, current, \
-				"  ——————————————————\n");
+			if (!isatty(STDIN_FILENO))
+				heredoc(0, current, "");
+			else
+				heredoc(0, current, "  ——————————————————\n");
 			restore_history(old_history);
 			if (g_signal == 130)
 				g_signal = 129;

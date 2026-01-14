@@ -6,7 +6,7 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 12:58:57 by vzurera-          #+#    #+#             */
-/*   Updated: 2024/05/06 20:22:14 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/01/14 23:01:08 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ int	help(t_data *d)
 	print(d, 1, BR" banner:\t"Y"Display the minishell banner\n", J);
 	print(d, 1, BR" help:\t\t"Y"Show this help\n\n"NC, J);
 	print(d, 1, C" All "G"builtins"C" comes with the flag "Y"--help", J);
-    print(d, 1, C" and "Y"--version\n", J);
+	print(d, 1, C" and "Y"--version\n", J);
 	print(d, 1, C"\n Also, you can create "G"shell variables ", J);
 	print(d, 1, C "using the format"Y" VAR=VALUE\n\n", J);
-    print(d, 1, G" Special variables: "Y"!!"C", "Y"$$"C", "Y"$?"C", "Y"$_", J);
-    print(d, 1, C","Y"$RANDOM"C", "Y"$SECONDS"C"\n\n", J);
-    print(d, 1, " Check the "G"documentation"C" for", J);
+	print(d, 1, G" Special variables: "Y"!!"C", "Y"$$"C", "Y"$?"C", "Y"$_", J);
+	print(d, 1, C","Y"$RANDOM"C", "Y"$SECONDS"C"\n\n", J);
+	print(d, 1, " Check the "G"documentation"C" for", J);
 	print(d, 1, " a complete list of features\n\n", P);
 	return (0);
 }

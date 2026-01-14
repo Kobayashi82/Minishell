@@ -6,7 +6,7 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 18:40:02 by vzurera-          #+#    #+#             */
-/*   Updated: 2024/05/06 12:03:55 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/01/15 00:12:02 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,8 +124,8 @@ int	set_redirections(t_token *tk, bool f)
 	{
 		if (!tk->data->main && !tk->data->is_subshell && c->type == DLT)
 		{
-			print(tk->data, 2, "minishell: warning: here-document ", R);
-			print(tk->data, 2, "delimited by end-of-file (wanted `", J);
+			print(tk->data, 2, "minishell: warning: here-document at line", R);
+			print(tk->data, 2, " 1 delimited by end-of-file (wanted `", J);
 			print(tk->data, 2, ft_strjoin(c->file, "')\n", 0), FP);
 			tk->data->extra = open("/dev/null", O_RDONLY);
 			safe_dup2(tk->data, &tk->data->extra, STDIN_FILENO, 1);

@@ -6,7 +6,7 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 15:44:59 by vzurera-          #+#    #+#             */
-/*   Updated: 2024/05/08 12:40:55 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/01/14 23:06:14 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static bool	optimize_pattern(char *input, char *pattern)
 	while (pattern && pattern[wc.i])
 	{
 		if (pattern[wc.i] == '*' && pattern[wc.i + 1] == '*')
-			ft_memmove(&pattern[wc.i], &pattern[wc.i + 1], \
+			ft_memmove(&pattern[wc.i], &pattern[wc.i + 1],
 				ft_strlen(&pattern[wc.i]));
 		else
 			wc.i++;

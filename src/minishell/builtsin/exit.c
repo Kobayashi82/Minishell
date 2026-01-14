@@ -6,7 +6,7 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 22:35:06 by vzurera-          #+#    #+#             */
-/*   Updated: 2024/05/08 16:13:01 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/01/14 23:24:27 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	exit_minishell(t_token *token, char **args)
 	{
 		arg = escape_input(args[1]);
 		if (!is_digit_num(arg))
-			data->exit_custom_code = exit_error(data, EXIT_NUM, 255, args[1]);
+			data->exit_custom_code = exit_error(data, EXIT_NUM, 2, args[1]);
 		else if (args[2])
 			data->exit_custom_code = exit_error(data, EXIT_ARGS, 1, NULL);
 		else

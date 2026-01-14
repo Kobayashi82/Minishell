@@ -6,6 +6,8 @@
 !doc
 !doc/**
 doc/minishell\ 8.3.pdf
+!tester
+!tester/**
 !inc
 !inc/**
 !src
