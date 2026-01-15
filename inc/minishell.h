@@ -6,7 +6,7 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 23:08:17 by vzurera-          #+#    #+#             */
-/*   Updated: 2024/05/11 02:29:52 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/01/15 00:58:18 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ typedef struct s_data
 	int				hd_t;
 	int				hd_n;
 	char			*msg;
+	char			*tmp_heredoc;
 	bool			main;
 	bool			is_subshell;
 	bool			as_arg;

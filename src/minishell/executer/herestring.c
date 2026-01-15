@@ -6,7 +6,7 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 15:59:59 by vzurera-          #+#    #+#             */
-/*   Updated: 2026/01/14 23:10:02 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/01/15 01:12:58 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,10 +97,9 @@ static void	expand_herestring(t_data *data, char **str)
 }
 
 //	Create a herestring
-int	herestring(t_data *data, t_redir **redir, bool forked)
+int	herestring(t_data *data, t_redir **redir, bool forked, int fd)
 {
 	char	*text;
-	int		fd;
 
 	if (!data->main && !data->is_subshell && (*redir)->type == DLT)
 		exit_error(data, SUB_HEREDOC, 1000, (*redir)->file);
@@ -111,7 +110,8 @@ int	herestring(t_data *data, t_redir **redir, bool forked)
 		expand_herestring(data, &text);
 		text = ft_strjoin(text, "\n", 1);
 		(*redir)->file = generate_tmp_name(data);
-		fd = open((*redir)->file, O_WRONLY | O_CREAT | O_TRUNC, 0600);
+		fd = open((*redir)->file, O_WRONLY | O_CREAT | O_TRUNC
+				| O_CLOEXEC, 0600);
 		if (fd != -1 && text)
 			write(fd, text, ft_strlen(text));
 		else if (fd == -1)

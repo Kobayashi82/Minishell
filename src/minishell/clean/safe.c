@@ -6,7 +6,7 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 01:04:04 by vzurera-          #+#    #+#             */
-/*   Updated: 2024/05/04 15:51:59 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/01/15 00:58:18 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,11 @@ int	safe_dup2(t_data *data, int *fd1, int fd2, int close_fd)
 	if (*fd1 == -1)
 		return (new_fd);
 	if (*fd1 == fd2)
+	{
+		if (close_fd)
+			close(*fd1);
 		return (0);
+	}
 	new_fd = dup2(*fd1, fd2);
 	if (close_fd)
 		close(*fd1);

@@ -6,7 +6,7 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 19:04:29 by vzurera-          #+#    #+#             */
-/*   Updated: 2024/04/30 14:18:32 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/01/15 01:12:50 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	heredocs(t_data *data);
 //	HERESTRINGS
 char	*ft_replace(char *str, int *start, int len, char *replace);
 char	*generate_tmp_name(t_data *data);
-int		herestring(t_data *data, t_redir **redir, bool forked);
+int		herestring(t_data *data, t_redir **redir, bool forked, int fd);
 //	EXPAND_REDIRECTIONS
 int		expand_closer(int fd, char *text);
 int		expand_input(t_data *data, t_redir *redir);

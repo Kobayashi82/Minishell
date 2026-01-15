@@ -6,7 +6,7 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 17:20:40 by vzurera-          #+#    #+#             */
-/*   Updated: 2026/01/15 00:19:14 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/01/15 00:58:18 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,7 @@ static int	heredoc(int fd, t_token *token, char *sep)
 	file = generate_tmp_name(token->data);
 	free(token->cmd);
 	token->cmd = file;
-	fd = open(file, O_WRONLY | O_CREAT | O_TRUNC, 0600);
+	fd = open(file, O_WRONLY | O_CREAT | O_TRUNC | O_CLOEXEC, 0600);
 	if (fd != -1 && text)
 		write(fd, text, ft_strlen(text));
 	else if (fd == -1)

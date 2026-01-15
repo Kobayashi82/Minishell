@@ -6,7 +6,7 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 18:40:02 by vzurera-          #+#    #+#             */
-/*   Updated: 2026/01/15 00:12:02 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/01/15 01:12:16 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static int	input(t_data *data, t_token *tk, t_redir *redir, bool forked)
 	int	fd;
 
 	fd = -1;
-	if (herestring(data, &redir, forked))
+	if (herestring(data, &redir, forked, -1))
 		return (1);
 	trim_arg(tk, redir->file);
 	if (redir->ambiguous)
@@ -67,7 +67,7 @@ static int	input(t_data *data, t_token *tk, t_redir *redir, bool forked)
 	else
 	{
 		expand_input(data, redir);
-		fd = open(redir->file, O_RDONLY);
+		fd = open(redir->file, O_RDONLY | O_CLOEXEC);
 		if (fd == -1)
 			data->last_status = exit_error(data, OPEN_FAIL, 1, redir->file);
 	}
@@ -84,8 +84,7 @@ static int	output(t_data *data, t_token *tk, t_redir *redir, bool forked)
 {
 	int	fd;
 
-	fd = -1;
-	trim_arg(tk, redir->file);
+	fd = trim_arg(tk, redir->file) - 1;
 	if (redir->ambiguous)
 		data->last_status = exit_error(data, OPEN_AMB, 1, redir->file);
 	else if (is_directory(redir->file))
@@ -93,9 +92,11 @@ static int	output(t_data *data, t_token *tk, t_redir *redir, bool forked)
 	else
 	{
 		if (redir->type == GT)
-			fd = open(redir->file, O_CREAT | O_WRONLY | O_TRUNC, 0664);
+			fd = open(redir->file, O_CREAT | O_WRONLY | O_TRUNC
+					| O_CLOEXEC, 0664);
 		else if (redir->type == DGT)
-			fd = open(redir->file, O_CREAT | O_WRONLY | O_APPEND, 0664);
+			fd = open(redir->file, O_CREAT | O_WRONLY | O_APPEND
+					| O_CLOEXEC, 0664);
 		if (fd == -1 && errno == EACCES)
 			data->last_status = exit_error(data, OPEN_READ, 1, redir->file);
 		else if (fd == -1)
@@ -105,8 +106,7 @@ static int	output(t_data *data, t_token *tk, t_redir *redir, bool forked)
 		fd = close_fds(tk, 0) + exit_error(data, NOTHING, 1000, NULL);
 	else if (fd == -1 && !forked)
 		return (1);
-	safe_dup2(data, &fd, STDOUT_FILENO, 1);
-	return (0);
+	return (safe_dup2(data, &fd, STDOUT_FILENO, 1), 0);
 }
 
 //	Set input, output and pipes redirections

@@ -6,7 +6,7 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 19:58:41 by vzurera-          #+#    #+#             */
-/*   Updated: 2024/04/29 19:42:57 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/01/15 00:58:18 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ void	data_free(t_data *data)
 		free(data->input);
 	if (data->msg)
 		free(data->msg);
+	if (data->tmp_heredoc)
+		free(data->tmp_heredoc);
 	close(data->bk_in);
 	close(data->bk_out);
 	close(data->bk_err);
