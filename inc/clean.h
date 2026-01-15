@@ -6,7 +6,7 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 19:33:01 by vzurera-          #+#    #+#             */
-/*   Updated: 2024/05/06 11:04:06 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/01/15 16:18:00 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ enum e_redirection_error
 	OPEN_WRITE = 43,
 	OPEN_DIR = 44,
 	OPEN_FAIL = 45,
-	DUP_FAIL = 46,
 	PIPE_FAIL = 47,
 	SUB_HEREDOC = 48
 };
@@ -88,7 +87,7 @@ void	free_array(char **array);
 void	*safe_malloc(t_data *data, long bytes);
 void	*safe_calloc(t_data *data, int count, long bytes);
 void	*safe_strdup(t_data *data, char *str);
-int		safe_dup2(t_data *data, int *fd1, int fd2, int close_fd);
+int		safe_dup2(int *fd1, int fd2, int close_fd);
 //ERROR
 int		exit_error(t_data *data, int error, int status, char *value);
 

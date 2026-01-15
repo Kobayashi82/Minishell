@@ -6,7 +6,7 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 01:04:04 by vzurera-          #+#    #+#             */
-/*   Updated: 2026/01/15 00:58:18 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/01/15 16:18:06 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	*safe_strdup(t_data *data, char *str)
 }
 
 //	A dup2 function with builtin exit error
-int	safe_dup2(t_data *data, int *fd1, int fd2, int close_fd)
+int	safe_dup2(int *fd1, int fd2, int close_fd)
 {
 	int	new_fd;
 
@@ -62,7 +62,5 @@ int	safe_dup2(t_data *data, int *fd1, int fd2, int close_fd)
 	new_fd = dup2(*fd1, fd2);
 	if (close_fd)
 		close(*fd1);
-	if (new_fd == -1)
-		exit_error(data, DUP_FAIL, 1, NULL);
 	return (new_fd);
 }

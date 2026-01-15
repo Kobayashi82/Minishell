@@ -6,7 +6,7 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 19:59:09 by vzurera-          #+#    #+#             */
-/*   Updated: 2026/01/14 22:59:35 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/01/15 16:16:57 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,6 @@ static void	redirection_msg(t_data *data, int error, char *val)
 		print(data, 2, ft_strjoin(val, ": Is a directory\n", 0), FP);
 	if (error == OPEN_FAIL)
 		print(data, 2, ft_strjoin(val, ": No such file or directory\n", 0), FP);
-	if (error == DUP_FAIL)
-		print(data, 2, "error duplicating file descriptor\n", P);
 	if (error == PIPE_FAIL)
 		print(data, 2, "pipe failed\n", P);
 	if (error == SUB_HEREDOC)

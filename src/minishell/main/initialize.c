@@ -6,7 +6,7 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:46:19 by vzurera-          #+#    #+#             */
-/*   Updated: 2026/01/14 23:09:32 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/01/15 16:16:42 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,6 @@ void	initialize_subshell(t_data *data, t_data *sub_data, int fd, bool cl_fd)
 	sub_data->bk_in = dup(STDIN_FILENO);
 	sub_data->bk_out = dup(fd);
 	sub_data->bk_err = dup(data->bk_err);
-	if (sub_data->bk_in == -1 || sub_data->bk_out == -1
-		|| sub_data->bk_err == -1)
-		exit_error(data, DUP_FAIL, 1001, NULL);
 	sub_data->envp = environment_clone(sub_data, data->envp);
 	sub_data->vars = data->vars;
 	set_shlvl(data);
@@ -114,7 +111,5 @@ void	initialize(t_data *data, char **envp, char *arg0)
 	data->bk_in = dup(STDIN_FILENO);
 	data->bk_out = dup(STDOUT_FILENO);
 	data->bk_err = dup(STDERR_FILENO);
-	if (data->bk_in == -1 || data->bk_out == -1 || data->bk_err == -1)
-		exit_error(data, DUP_FAIL, 1001, NULL);
 	initialize_variables(data, envp, arg0);
 }
