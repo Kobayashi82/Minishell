@@ -9,6 +9,10 @@
 
 </div>
 
+<div align="center">
+  <img src="/doc/MiniShell.jpg">
+</div>
+
 # Minishell
 
 Minishell es un proyecto de ```42 School``` que implementa las funcionalidades básicas de un shell tipo ```Bash```.  
