@@ -22,7 +22,7 @@ This version includes all `mandatory` requirements, the `bonus`, and some `addit
 
 ## ✨ Features
 
-### 🔧 Core Functionality
+### Core Functionality
 - `Interactive command line`: Clean prompt with command history
 - `Command execution`: PATH resolution, absolute/relative execution
 - `Process management`: Fork/exec model with proper signal handling
@@ -32,7 +32,7 @@ This version includes all `mandatory` requirements, the `bonus`, and some `addit
 - `Heredoc`: Advanced input redirection mechanisms
 - `Syntax checking`: Detection and reporting of syntax errors
 
-### 🚀 Advanced Features
+### Advanced Features
 
 #### Improved parsing
 - `Command substitution`: `$()` for command substitution
@@ -59,9 +59,9 @@ This version includes all `mandatory` requirements, the `bonus`, and some `addit
 - `Subshells`: `()` for execution in subprocesses
 - `Concurrent execution`: Handling of multiple processes
 
-### 🛠️ Enhanced built-in commands
+### Builtin commands
 
-All built-ins include `--help` and `--version`:
+All builtins include `--help` and `--version`:
 
 - `echo` - With `-n` and `-e` options
 - `cd` - With `cd -` support (previous directory)
@@ -105,7 +105,7 @@ Hello World
 ./minishell -c "cat /etc/passwd | grep root > users.txt"
 ```
 
-### Common usage examples
+### Usage examples
 ```bash
 # Pipe usage
 minishell$ ls -la | grep ".c" | wc -l
@@ -145,7 +145,7 @@ minishell$ (cd /tmp && pwd) && pwd
 /original/path
 ```
 
-### Advanced wildcards
+### Wildcards
 ```bash
 minishell$ ls *.c           # .c files
 minishell$ ls file?.txt     # file1.txt, file2.txt, etc.
@@ -161,7 +161,7 @@ minishell$ bc <<< "2+2"
 4
 ```
 
-## 🧪 Technical highlights
+## 🧪 Technical Highlights
 
 ### **Memory management**
 - ✅ **No memory leaks**: Full heap cleanup

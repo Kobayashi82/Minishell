@@ -22,7 +22,7 @@ Esta versión incluye todos los requisitos ```obligatorios``` del proyecto, los 
 
 ## ✨ Características
 
-### 🔧 Funcionalidades Básicas
+### Funcionalidades Básicas
 - `Línea de Comandos Interactiva`: Prompt limpio con historial de comandos
 - `Ejecución de Comandos`: Resolución de PATH, ejecución con rutas absolutas/relativas
 - `Gestión de Procesos`: Modelo fork/exec con manejo adecuado de señales
@@ -32,9 +32,9 @@ Esta versión incluye todos los requisitos ```obligatorios``` del proyecto, los 
 - `Heredoc`: Mecanismos avanzados de redirección de entrada
 - `Verificación de Sintaxis`: Detección y reporte de errores sintácticos
 
-### 🚀 Características Avanzadas
+### Características Avanzadas
 
-#### Análisis Sintáctico Mejorado
+#### Análisis sintáctico
 - `Expansión de Comandos`: `$()` para sustitución de comandos
 - `Modo No-Interactivo`: Opción `-c` para ejecutar comandos directamente
 - `Herestring`: `<<<` para entrada de cadena directa
@@ -43,7 +43,7 @@ Esta versión incluye todos los requisitos ```obligatorios``` del proyecto, los 
 - `Escape de Caracteres`: Soporte para `\` (barra invertida)
 - `Tokens No Cerrados`: Muestra PS2 para continuación de línea
 
-#### Variables y Expansión
+#### Variables y expansión
 - ``Variables de Shell``: Variables locales además de las de entorno
 - ``Variables Especiales``:
   - `$$` - PID del shell
@@ -54,14 +54,14 @@ Esta versión incluye todos los requisitos ```obligatorios``` del proyecto, los 
 - ``Expansión de Tilde``: `~` se expande al directorio home
 - ``Expansión de Comodines``: `*`, `?` y `[a-z]` con patrones avanzados
 
-#### Operadores Lógicos y Control
+#### Operadores lógicos y control
 - ``Operadores Lógicos``: `&&` y `||` con soporte de paréntesis para prioridades
 - ``Subshells``: `()` para ejecución en subprocesos
 - ``Ejecución Concurrente``: Manejo de múltiples procesos
 
-### 🛠️ Comandos Built-in Mejorados
+### Comandos Builtin
 
-Todos los built-ins incluyen `--help` y `--version`:
+Todos los builtins incluyen `--help` y `--version`:
 
 - `echo` - Con opciones `-n` y `-e`
 - `cd` - Con soporte para `cd -` (directorio anterior)
@@ -84,7 +84,7 @@ make
 
 ## 🖥️ Uso
 
-### Modo Interactivo
+### Modo interactivo
 ```bash
 # Iniciar minishell
 ./minishell
@@ -94,7 +94,7 @@ minishell$ echo "Hola Mundo"
 Hola Mundo
 ```
 
-### Modo No-Interactivo (Opción -c)
+### Modo no-interactivo (opción -c)
 ```bash
 # Ejecutar comandos directamente
 ./minishell -c "echo 'Hola desde línea de comandos'"
@@ -105,7 +105,7 @@ Hola Mundo
 ./minishell -c "cat /etc/passwd | grep root > users.txt"
 ```
 
-### Ejemplos de Uso Común
+### Ejemplos de uso
 ```bash
 # Uso de pipes
 minishell$ ls -la | grep ".c" | wc -l
@@ -127,7 +127,7 @@ minishell$ cat << EOF
 
 ## 📚 Ejemplos Avanzados
 
-### Expansión de Comandos
+### Expansión de comandos
 ```bash
 minishell$ echo "Fecha actual: $(date)"
 Fecha actual: Lun 26 May 2025 10:30:15 CEST
@@ -136,7 +136,7 @@ minishell$ files=$(ls *.c)
 minishell$ echo $files
 ```
 
-### Operadores Lógicos
+### Operadores lógicos
 ```bash
 minishell$ make && echo "Compilación exitosa" || echo "Error en compilación"
 
@@ -145,7 +145,7 @@ minishell$ (cd /tmp && pwd) && pwd
 /ruta/original
 ```
 
-### Comodines Avanzados
+### Wildcards
 ```bash
 minishell$ ls *.c           # Archivos .c
 minishell$ ls file?.txt     # file1.txt, file2.txt, etc.
