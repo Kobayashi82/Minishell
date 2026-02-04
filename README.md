@@ -10,7 +10,7 @@
 </div>
 
 <div align="center">
-  <img src="/doc/MiniShell.jpg">
+  <img src="/Minishell.png">
 </div>
 
 # Minishell
@@ -188,4 +188,8 @@ Este proyecto está licenciado bajo la WTFPL – [Do What the Fuck You Want to P
 
 *"In Minishell, the last feature is never really the last"*
 
+</div>
+
+<div align="center">
+  <img src="/doc/MiniShell.jpg">
 </div>
