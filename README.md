@@ -5,7 +5,7 @@
 ![Protocol Command](https://img.shields.io/badge/Protocol-Shell-green?style=for-the-badge)
 ![C Language](https://img.shields.io/badge/Language-C-red?style=for-the-badge)
 
-*Una implementación básica de un shell al estilo Bash*
+*A basic Bash-style shell implementation*
 
 </div>
 
@@ -15,64 +15,66 @@
 
 # Minishell
 
-Minishell es un proyecto de ```42 School``` que implementa las funcionalidades básicas de un shell tipo ```Bash```.  
-Esta versión incluye todos los requisitos ```obligatorios``` del proyecto, los del ```bonus``` y algunas características ```adicionales```.
+[README en Español](README_es.md)
 
-## ✨ Características
+Minishell is a 42 School project that implements the basic features of a Bash-like shell.  
+This version includes all mandatory requirements, the bonus, and some additional features.
 
-### 🔧 Funcionalidades Básicas
-- **Línea de Comandos Interactiva**: Prompt limpio con historial de comandos
-- **Ejecución de Comandos**: Resolución de PATH, ejecución con rutas absolutas/relativas
-- **Gestión de Procesos**: Modelo fork/exec con manejo adecuado de señales
-- **Variables de Entorno**: Soporte completo para expansión y manipulación de variables
-- **Redirección I/O**: Redirección de entrada/salida con modo append
-- **Pipes**: Encadenamiento de comandos con operadores de tubería
-- **Heredoc**: Mecanismos avanzados de redirección de entrada
-- **Verificación de Sintaxis**: Detección y reporte de errores sintácticos
+## ✨ Features
 
-### 🚀 Características Avanzadas
+### 🔧 Core Functionality
+- **Interactive command line**: Clean prompt with command history
+- **Command execution**: PATH resolution, absolute/relative execution
+- **Process management**: Fork/exec model with proper signal handling
+- **Environment variables**: Full support for variable expansion and manipulation
+- **I/O redirection**: Input/output redirection with append mode
+- **Pipes**: Command chaining with pipe operators
+- **Heredoc**: Advanced input redirection mechanisms
+- **Syntax checking**: Detection and reporting of syntax errors
 
-#### **Análisis Sintáctico Mejorado**
-- **Expansión de Comandos**: `$()` para sustitución de comandos
-- **Modo No-Interactivo**: Opción `-c` para ejecutar comandos directamente
-- **Herestring**: `<<<` para entrada de cadena directa
-- **Expansión en Heredoc**: Variables y comandos dentro de heredoc y herestring
-- **Manejo de Comillas**: Procesamiento avanzado de comillas simples y dobles
-- **Escape de Caracteres**: Soporte para `\` (barra invertida)
-- **Tokens No Cerrados**: Muestra PS2 para continuación de línea
+### 🚀 Advanced Features
 
-#### **Variables y Expansión**
-- **Variables de Shell**: Variables locales además de las de entorno
-- **Variables Especiales**:
-  - `$$` - PID del shell
-  - `$RANDOM` - Número aleatorio
-  - `$TIME` - Timestamp actual
-  - `$_` - Último argumento del comando anterior
-  - `$?` - Último código de salida
-- **Expansión de Tilde**: `~` se expande al directorio home
-- **Expansión de Comodines**: `*`, `?` y `[a-z]` con patrones avanzados
+#### **Improved parsing**
+- **Command substitution**: `$()` for command substitution
+- **Non-interactive mode**: `-c` option to run commands directly
+- **Herestring**: `<<<` for direct string input
+- **Heredoc expansion**: Variables and commands inside heredoc and herestring
+- **Quote handling**: Advanced single and double quote processing
+- **Character escaping**: Support for `\` (backslash)
+- **Unclosed tokens**: Displays PS2 for line continuation
 
-#### **Operadores Lógicos y Control**
-- **Operadores Lógicos**: `&&` y `||` con soporte de paréntesis para prioridades
-- **Subshells**: `()` para ejecución en subprocesos
-- **Ejecución Concurrente**: Manejo de múltiples procesos
+#### **Variables and expansion**
+- **Shell variables**: Local variables in addition to environment variables
+- **Special variables**:
+  - `$$` - Shell PID
+  - `$RANDOM` - Random number
+  - `$TIME` - Current timestamp
+  - `$_` - Last argument of the previous command
+  - `$?` - Last exit code
+- **Tilde expansion**: `~` expands to the home directory
+- **Wildcard expansion**: `*`, `?`, and `[a-z]` with advanced patterns
 
-### 🛠️ Comandos Built-in Mejorados
+#### **Logical operators and control**
+- **Logical operators**: `&&` and `||` with parenthesis support for precedence
+- **Subshells**: `()` for execution in subprocesses
+- **Concurrent execution**: Handling of multiple processes
 
-Todos los built-ins incluyen `--help` y `--version`:
+### 🛠️ Enhanced built-in commands
 
-- **`echo`** - Con opciones `-n` y `-e`
-- **`cd`** - Con soporte para `cd -` (directorio anterior)
-- **`pwd`** - Directorio actual
-- **`export`** - Gestión de variables de entorno
-- **`unset`** - Eliminación de variables
-- **`env`** - Con `-s` para mostrar variables de shell
-- **`exit`** - Salida del shell
-- **`history`** - Gestión del historial de comandos
-- **`help`** - Sistema de ayuda integrado
-- **`banner`** - Mensaje de bienvenida
+All built-ins include `--help` and `--version`:
 
-## 🔧 Instalación
+- **`echo`** - With `-n` and `-e` options
+- **`cd`** - With `cd -` support (previous directory)
+- **`pwd`** - Current directory
+- **`export`** - Environment variable management
+- **`unset`** - Remove variables
+- **`env`** - With `-s` to show shell variables
+- **`exit`** - Exit the shell
+- **`history`** - Command history management
+- **`help`** - Built-in help system
+- **`banner`** - Welcome message
+
+## 🔧 Installation
 
 ```bash
 git clone git@github.com:Kobayashi82/Minishell.git
@@ -80,111 +82,111 @@ cd minishell
 make
 ```
 
-## 🖥️ Uso
+## 🖥️ Usage
 
-### Modo Interactivo
+### Interactive mode
 ```bash
-# Iniciar minishell
+# Start minishell
 ./minishell
 
-# Ejemplo de uso básico
-minishell$ echo "Hola Mundo"
-Hola Mundo
+# Basic example
+minishell$ echo "Hello World"
+Hello World
 ```
 
-### Modo No-Interactivo (Opción -c)
+### Non-interactive mode (-c option)
 ```bash
-# Ejecutar comandos directamente
-./minishell -c "echo 'Hola desde línea de comandos'"
+# Run commands directly
+./minishell -c "echo 'Hello from the command line'"
 ./minishell -c "ls -la | grep '.c' | wc -l"
-./minishell -c "export VAR=valor && echo \$VAR"
+./minishell -c "export VAR=value && echo \$VAR"
 
-# Comandos complejos con pipes y redirección
+# Complex commands with pipes and redirection
 ./minishell -c "cat /etc/passwd | grep root > users.txt"
 ```
 
-### Ejemplos de Uso Común
+### Common usage examples
 ```bash
-# Uso de pipes
+# Pipe usage
 minishell$ ls -la | grep ".c" | wc -l
 
-# Redirección
-minishell$ echo "contenido" > archivo.txt
-minishell$ cat < archivo.txt
+# Redirection
+minishell$ echo "content" > file.txt
+minishell$ cat < file.txt
 
 # Variables
-minishell$ export VAR="valor"
+minishell$ export VAR="value"
 minishell$ echo $VAR
 
 # Heredoc
 minishell$ cat << EOF
-> línea 1
-> línea 2
+> line 1
+> line 2
 > EOF
 ```
 
-## 📚 Ejemplos Avanzados
+## 📚 Advanced examples
 
-### Expansión de Comandos
+### Command substitution
 ```bash
-minishell$ echo "Fecha actual: $(date)"
-Fecha actual: Lun 26 May 2025 10:30:15 CEST
+minishell$ echo "Current date: $(date)"
+Current date: Mon 26 May 2025 10:30:15 CEST
 
 minishell$ files=$(ls *.c)
 minishell$ echo $files
 ```
 
-### Operadores Lógicos
+### Logical operators
 ```bash
-minishell$ make && echo "Compilación exitosa" || echo "Error en compilación"
+minishell$ make && echo "Build succeeded" || echo "Build failed"
 
 minishell$ (cd /tmp && pwd) && pwd
 /tmp
-/ruta/original
+/original/path
 ```
 
-### Comodines Avanzados
+### Advanced wildcards
 ```bash
-minishell$ ls *.c           # Archivos .c
+minishell$ ls *.c           # .c files
 minishell$ ls file?.txt     # file1.txt, file2.txt, etc.
-minishell$ ls [a-z]*.c      # Archivos .c que empiecen con minúscula
+minishell$ ls [a-z]*.c      # .c files starting with lowercase
 ```
 
 ### Herestring
 ```bash
-minishell$ cat <<< "Esta es una línea de texto"
-Esta es una línea de texto
+minishell$ cat <<< "This is a line of text"
+This is a line of text
 
 minishell$ bc <<< "2+2"
 4
 ```
 
-## 🧪 Características Técnicas
+## 🧪 Technical highlights
 
-### **Gestión de Memoria**
-- ✅ **Sin memory leaks**: Liberación completa de memoria heap
-- ✅ **Sin file descriptors abiertos**: Cierre adecuado de todos los FDs
-- ✅ **Gestión de señales**: Manejo robusto de SIGINT, SIGQUIT, EOF
+### **Memory management**
+- ✅ **No memory leaks**: Full heap cleanup
+- ✅ **No open file descriptors**: Properly closes all FDs
+- ✅ **Signal handling**: Robust handling of SIGINT, SIGQUIT, EOF
 
-### **Compatibilidad con Bash**
-- ✅ **Manejo de errores idéntico**: Códigos de error y mensajes como Bash
-- ✅ **Comportamiento de señales**: Ctrl-C, Ctrl-D, Ctrl-\ como en Bash
-- ✅ **Variables especiales**: Comportamiento idéntico a Bash
+### **Bash compatibility**
+- ✅ **Identical error handling**: Error codes and messages like Bash
+- ✅ **Signal behavior**: Ctrl-C, Ctrl-D, Ctrl-\ like Bash
+- ✅ **Special variables**: Identical behavior to Bash
 
-### **Análisis Sintáctico Robusto**
-- ✅ **Parser recursivo**: Análisis sintáctico completo
-- ✅ **Manejo de errores**: Detección y reporte detallado de errores
-- ✅ **Tokenización avanzada**: Soporte para tokens complejos
+### **Robust parsing**
+- ✅ **Recursive parser**: Complete syntax parsing
+- ✅ **Error handling**: Detailed error detection and reporting
+- ✅ **Advanced tokenization**: Support for complex tokens
 
-## 📄 Licencia
+## 📄 License
 
-Este proyecto está licenciado bajo la WTFPL – [Do What the Fuck You Want to Public License](http://www.wtfpl.net/about/).
+This project is licensed under the WTFPL – [Do What the Fuck You Want to Public License](http://www.wtfpl.net/about/).
 
 ---
 
 <div align="center">
 
-**🐚 Desarrollado como parte del curriculum de 42 School 🐚**
+**🐚 Developed as part of the 42 School curriculum 🐚**
 
 *"In Minishell, the last feature is never really the last"*
 

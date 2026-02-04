@@ -17,5 +17,6 @@ doc/minishell\ 8.3.pdf
 !Makefile
 !.gitignore
 !README.md
+!README_es.md
 !LICENSE
 !Minishell.png
