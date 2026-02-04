@@ -44,35 +44,35 @@ This version includes all `mandatory` requirements, the `bonus`, and some `addit
 - `Unclosed tokens`: Displays PS2 for line continuation
 
 #### **Variables and expansion**
-- **Shell variables**: Local variables in addition to environment variables
-- **Special variables**:
+- `Shell variables`: Local variables in addition to environment variables
+- `Special variables`:
   - `$$` - Shell PID
   - `$RANDOM` - Random number
   - `$TIME` - Current timestamp
   - `$_` - Last argument of the previous command
   - `$?` - Last exit code
-- **Tilde expansion**: `~` expands to the home directory
-- **Wildcard expansion**: `*`, `?`, and `[a-z]` with advanced patterns
+- `Tilde expansion`: `~` expands to the home directory
+- `Wildcard expansion`: `*`, `?`, and `[a-z]` with advanced patterns
 
 #### **Logical operators and control**
-- **Logical operators**: `&&` and `||` with parenthesis support for precedence
-- **Subshells**: `()` for execution in subprocesses
-- **Concurrent execution**: Handling of multiple processes
+- `Logical operators`: `&&` and `||` with parenthesis support for precedence
+- `Subshells`: `()` for execution in subprocesses
+- `Concurrent execution`: Handling of multiple processes
 
 ### 🛠️ Enhanced built-in commands
 
 All built-ins include `--help` and `--version`:
 
-- **`echo`** - With `-n` and `-e` options
-- **`cd`** - With `cd -` support (previous directory)
-- **`pwd`** - Current directory
-- **`export`** - Environment variable management
-- **`unset`** - Remove variables
-- **`env`** - With `-s` to show shell variables
-- **`exit`** - Exit the shell
-- **`history`** - Command history management
-- **`help`** - Built-in help system
-- **`banner`** - Welcome message
+- `echo` - With `-n` and `-e` options
+- `cd` - With `cd -` support (previous directory)
+- `pwd` - Current directory
+- `export` - Environment variable management
+- `unset` - Remove variables
+- `env` - With `-s` to show shell variables
+- `exit` - Exit the shell
+- `history` - Command history management
+- `help` - Built-in help system
+- `banner` - Welcome message
 
 ## 🔧 Installation
 
