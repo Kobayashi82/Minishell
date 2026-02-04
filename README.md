@@ -34,7 +34,7 @@ This version includes all `mandatory` requirements, the `bonus`, and some `addit
 
 ### 🚀 Advanced Features
 
-#### **Improved parsing**
+#### Improved parsing
 - `Command substitution`: `$()` for command substitution
 - `Non-interactive mode`: `-c` option to run commands directly
 - `Herestring`: `<<<` for direct string input
@@ -43,7 +43,7 @@ This version includes all `mandatory` requirements, the `bonus`, and some `addit
 - `Character escaping`: Support for `\` (backslash)
 - `Unclosed tokens`: Displays PS2 for line continuation
 
-#### **Variables and expansion**
+#### Variables and expansion
 - `Shell variables`: Local variables in addition to environment variables
 - `Special variables`:
   - `$$` - Shell PID
@@ -54,7 +54,7 @@ This version includes all `mandatory` requirements, the `bonus`, and some `addit
 - `Tilde expansion`: `~` expands to the home directory
 - `Wildcard expansion`: `*`, `?`, and `[a-z]` with advanced patterns
 
-#### **Logical operators and control**
+#### Logical operators and control
 - `Logical operators`: `&&` and `||` with parenthesis support for precedence
 - `Subshells`: `()` for execution in subprocesses
 - `Concurrent execution`: Handling of multiple processes
@@ -166,11 +166,11 @@ minishell$ bc <<< "2+2"
 ### **Memory management**
 - ✅ **No memory leaks**: Full heap cleanup
 - ✅ **No open file descriptors**: Properly closes all FDs
-- ✅ **Signal handling**: Robust handling of SIGINT, SIGQUIT, EOF
+- ✅ **Signal handling**: Robust handling of `SIGINT`, `SIGQUIT`, `EOF`
 
 ### **Bash compatibility**
 - ✅ **Identical error handling**: Error codes and messages like Bash
-- ✅ **Signal behavior**: Ctrl-C, Ctrl-D, Ctrl-\ like Bash
+- ✅ **Signal behavior**: `Ctrl-C`, `Ctrl-D`, `Ctrl-\` like Bash
 - ✅ **Special variables**: Identical behavior to Bash
 
 ### **Robust parsing**

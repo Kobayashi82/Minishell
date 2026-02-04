@@ -23,56 +23,56 @@ Esta versión incluye todos los requisitos ```obligatorios``` del proyecto, los 
 ## ✨ Características
 
 ### 🔧 Funcionalidades Básicas
-- **Línea de Comandos Interactiva**: Prompt limpio con historial de comandos
-- **Ejecución de Comandos**: Resolución de PATH, ejecución con rutas absolutas/relativas
-- **Gestión de Procesos**: Modelo fork/exec con manejo adecuado de señales
-- **Variables de Entorno**: Soporte completo para expansión y manipulación de variables
-- **Redirección I/O**: Redirección de entrada/salida con modo append
-- **Pipes**: Encadenamiento de comandos con operadores de tubería
-- **Heredoc**: Mecanismos avanzados de redirección de entrada
-- **Verificación de Sintaxis**: Detección y reporte de errores sintácticos
+- `Línea de Comandos Interactiva`: Prompt limpio con historial de comandos
+- `Ejecución de Comandos`: Resolución de PATH, ejecución con rutas absolutas/relativas
+- `Gestión de Procesos`: Modelo fork/exec con manejo adecuado de señales
+- `Variables de Entorno`: Soporte completo para expansión y manipulación de variables
+- `Redirección I/O`: Redirección de entrada/salida con modo append
+- `Pipes`: Encadenamiento de comandos con operadores de tubería
+- `Heredoc`: Mecanismos avanzados de redirección de entrada
+- `Verificación de Sintaxis`: Detección y reporte de errores sintácticos
 
 ### 🚀 Características Avanzadas
 
-#### **Análisis Sintáctico Mejorado**
-- **Expansión de Comandos**: `$()` para sustitución de comandos
-- **Modo No-Interactivo**: Opción `-c` para ejecutar comandos directamente
-- **Herestring**: `<<<` para entrada de cadena directa
-- **Expansión en Heredoc**: Variables y comandos dentro de heredoc y herestring
-- **Manejo de Comillas**: Procesamiento avanzado de comillas simples y dobles
-- **Escape de Caracteres**: Soporte para `\` (barra invertida)
-- **Tokens No Cerrados**: Muestra PS2 para continuación de línea
+#### Análisis Sintáctico Mejorado
+- `Expansión de Comandos`: `$()` para sustitución de comandos
+- `Modo No-Interactivo`: Opción `-c` para ejecutar comandos directamente
+- `Herestring`: `<<<` para entrada de cadena directa
+- `Expansión en Heredoc`: Variables y comandos dentro de heredoc y herestring
+- `Manejo de Comillas`: Procesamiento avanzado de comillas simples y dobles
+- `Escape de Caracteres`: Soporte para `\` (barra invertida)
+- `Tokens No Cerrados`: Muestra PS2 para continuación de línea
 
-#### **Variables y Expansión**
-- **Variables de Shell**: Variables locales además de las de entorno
-- **Variables Especiales**:
+#### Variables y Expansión
+- ``Variables de Shell``: Variables locales además de las de entorno
+- ``Variables Especiales``:
   - `$$` - PID del shell
   - `$RANDOM` - Número aleatorio
   - `$TIME` - Timestamp actual
   - `$_` - Último argumento del comando anterior
   - `$?` - Último código de salida
-- **Expansión de Tilde**: `~` se expande al directorio home
-- **Expansión de Comodines**: `*`, `?` y `[a-z]` con patrones avanzados
+- ``Expansión de Tilde``: `~` se expande al directorio home
+- ``Expansión de Comodines``: `*`, `?` y `[a-z]` con patrones avanzados
 
-#### **Operadores Lógicos y Control**
-- **Operadores Lógicos**: `&&` y `||` con soporte de paréntesis para prioridades
-- **Subshells**: `()` para ejecución en subprocesos
-- **Ejecución Concurrente**: Manejo de múltiples procesos
+#### Operadores Lógicos y Control
+- ``Operadores Lógicos``: `&&` y `||` con soporte de paréntesis para prioridades
+- ``Subshells``: `()` para ejecución en subprocesos
+- ``Ejecución Concurrente``: Manejo de múltiples procesos
 
 ### 🛠️ Comandos Built-in Mejorados
 
 Todos los built-ins incluyen `--help` y `--version`:
 
-- **`echo`** - Con opciones `-n` y `-e`
-- **`cd`** - Con soporte para `cd -` (directorio anterior)
-- **`pwd`** - Directorio actual
-- **`export`** - Gestión de variables de entorno
-- **`unset`** - Eliminación de variables
-- **`env`** - Con `-s` para mostrar variables de shell
-- **`exit`** - Salida del shell
-- **`history`** - Gestión del historial de comandos
-- **`help`** - Sistema de ayuda integrado
-- **`banner`** - Mensaje de bienvenida
+- `echo` - Con opciones `-n` y `-e`
+- `cd` - Con soporte para `cd -` (directorio anterior)
+- `pwd` - Directorio actual
+- `export` - Gestión de variables de entorno
+- `unset` - Eliminación de variables
+- `env` - Con `-s` para mostrar variables de shell
+- `exit` - Salida del shell
+- `history` - Gestión del historial de comandos
+- `help` - Sistema de ayuda integrado
+- `banner` - Mensaje de bienvenida
 
 ## 🔧 Instalación
 
@@ -166,11 +166,11 @@ minishell$ bc <<< "2+2"
 ### **Gestión de Memoria**
 - ✅ **Sin memory leaks**: Liberación completa de memoria heap
 - ✅ **Sin file descriptors abiertos**: Cierre adecuado de todos los FDs
-- ✅ **Gestión de señales**: Manejo robusto de SIGINT, SIGQUIT, EOF
+- ✅ **Gestión de señales**: Manejo robusto de `SIGINT`, `SIGQUIT`, `EOF`
 
 ### **Compatibilidad con Bash**
 - ✅ **Manejo de errores idéntico**: Códigos de error y mensajes como Bash
-- ✅ **Comportamiento de señales**: Ctrl-C, Ctrl-D, Ctrl-\ como en Bash
+- ✅ **Comportamiento de señales**: `Ctrl-C`, `Ctrl-D`, `Ctrl-\` como en Bash
 - ✅ **Variables especiales**: Comportamiento idéntico a Bash
 
 ### **Análisis Sintáctico Robusto**
