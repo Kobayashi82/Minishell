@@ -17,31 +17,31 @@
 
 [README en Español](README_es.md)
 
-Minishell is a 42 School project that implements the basic features of a Bash-like shell.  
-This version includes all mandatory requirements, the bonus, and some additional features.
+`Minishell` is a `42 School` project that implements the basic features of a shell like `Bash`.  
+This version includes all `mandatory` requirements, the `bonus`, and some `additional` features.
 
 ## ✨ Features
 
 ### 🔧 Core Functionality
-- **Interactive command line**: Clean prompt with command history
-- **Command execution**: PATH resolution, absolute/relative execution
-- **Process management**: Fork/exec model with proper signal handling
-- **Environment variables**: Full support for variable expansion and manipulation
-- **I/O redirection**: Input/output redirection with append mode
-- **Pipes**: Command chaining with pipe operators
-- **Heredoc**: Advanced input redirection mechanisms
-- **Syntax checking**: Detection and reporting of syntax errors
+- `Interactive command line`: Clean prompt with command history
+- `Command execution`: PATH resolution, absolute/relative execution
+- `Process management`: Fork/exec model with proper signal handling
+- `Environment variables`: Full support for variable expansion and manipulation
+- `I/O redirection`: Input/output redirection with append mode
+- `Pipes`: Command chaining with pipe operators
+- `Heredoc`: Advanced input redirection mechanisms
+- `Syntax checking`: Detection and reporting of syntax errors
 
 ### 🚀 Advanced Features
 
 #### **Improved parsing**
-- **Command substitution**: `$()` for command substitution
-- **Non-interactive mode**: `-c` option to run commands directly
-- **Herestring**: `<<<` for direct string input
-- **Heredoc expansion**: Variables and commands inside heredoc and herestring
-- **Quote handling**: Advanced single and double quote processing
-- **Character escaping**: Support for `\` (backslash)
-- **Unclosed tokens**: Displays PS2 for line continuation
+- `Command substitution`: `$()` for command substitution
+- `Non-interactive mode`: `-c` option to run commands directly
+- `Herestring`: `<<<` for direct string input
+- `Heredoc expansion`: Variables and commands inside heredoc and herestring
+- `Quote handling`: Advanced single and double quote processing
+- `Character escaping`: Support for `\` (backslash)
+- `Unclosed tokens`: Displays PS2 for line continuation
 
 #### **Variables and expansion**
 - **Shell variables**: Local variables in addition to environment variables
