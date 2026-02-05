@@ -3,15 +3,20 @@
 !.vscode/**
 .vscode/launch.json
 .vscode/settings.json
+
 !doc
 !doc/**
-doc/minishell\ 8.3.pdf
+doc/minishell\ 10.0.pdf
+
 !tester
 !tester/**
+
 !inc
 !inc/**
+
 !src
 !src/**
+
 !.readline.supp
 !leaks
 !Makefile
